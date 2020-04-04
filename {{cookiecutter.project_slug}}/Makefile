@@ -1,4 +1,4 @@
-{% if cookiecutter.use_docker == 'y' %}PYTHON_COMMAND = docker-compose  -f -f local.yml run django python{% else %}PYTHON_COMMAND = python{% endif %}
+{% if cookiecutter.use_docker == 'y' %}PYTHON_COMMAND = docker-compose -f local.yml run django python{% else %}PYTHON_COMMAND = python{% endif %}
 
 runserver:
 	{% if cookiecutter.use_docker == 'y' %}docker-compose -f local.yml up {% else %}python manage.py runserver{% endif %}
